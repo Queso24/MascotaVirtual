@@ -7,11 +7,16 @@ import androidx.navigation.compose.rememberNavController
 import com.example.proyectoparcial.clases.RegistroGlucosa
 import com.example.proyectoparcial.pantallas.GlucosaView
 import com.example.proyectoparcial.pantallas.MenuInicialView
+import com.example.proyectoparcial.pantallas.RegistroComidasView
+import com.example.proyectoparcial.pantallas.RegistroEstadisticasView
 
 sealed class Rutas(val ruta: String) { //La usamos para tener una jerarquía de rutas definida
     // y evitar errores al escribir los nombres de las pantallas
     object Menu : Rutas("menu")
     object RegistroGlucosa : Rutas("registro_glucosa")
+    object RegistroComidas : Rutas("registro_comidas")
+    object RegistroEstadisticas : Rutas("registro_estadisticas")
+
 }
 
 @Composable
@@ -34,5 +39,14 @@ fun navegacion() {
             // Aquí llamas a tu función del formulario de glucosa
             GlucosaView(navController = navController)
         }
+        // Pantalla 3: Registro de Comida
+        composable(route = Rutas.RegistroComidas.ruta) {
+            RegistroComidasView(navController = navController)
+        }
+        // Pantalla 4: Registro de estadísticas
+        composable(route = Rutas.RegistroEstadisticas.ruta) {
+            RegistroEstadisticasView(navController = navController)
+        }
+
     }
 }

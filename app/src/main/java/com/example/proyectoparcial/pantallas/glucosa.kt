@@ -62,7 +62,7 @@ fun GlucosaView(navController: NavHostController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Registra tu medición",
+                    text = "Add your level",
                     color = Color(0xFF7986CB),
                     fontWeight = FontWeight.Bold
                 )
@@ -73,7 +73,7 @@ fun GlucosaView(navController: NavHostController) {
                 OutlinedTextField(
                     value = "",
                     onValueChange = {},
-                    label = { Text("Nivel de Glucosa") },
+                    label = { Text("Glucose Level") },
                     placeholder = { Text("mg/dL") },
                     leadingIcon = { Icon(Icons.Default.Info, null) },
                     modifier = Modifier.fillMaxWidth(),
@@ -86,7 +86,7 @@ fun GlucosaView(navController: NavHostController) {
                 OutlinedTextField(
                     value = "3/2/2026",
                     onValueChange = {},
-                    label = { Text("Fecha") },
+                    label = { Text("Date") },
                     leadingIcon = { Icon(Icons.Default.Info, null) },
                     trailingIcon = { Icon(Icons.Default.Info, null) },
                     modifier = Modifier.fillMaxWidth(),
@@ -97,9 +97,9 @@ fun GlucosaView(navController: NavHostController) {
 
                 // Textfield de hora
                 OutlinedTextField(
-                    value = "12:30",
+                    value = "12:30 PM",
                     onValueChange = {},
-                    label = { Text("Hora") },
+                    label = { Text("Time") },
                     leadingIcon = { Icon(Icons.Default.Info, null) },
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(12.dp)
@@ -109,7 +109,7 @@ fun GlucosaView(navController: NavHostController) {
 
                 // Valores rápidos
                 Text(
-                    text = "Valores rápidos:",
+                    text = "Quick values:",
                     modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp),
                     color = Color.Gray,
                     fontSize = 14.sp
@@ -162,7 +162,7 @@ fun GlucosaView(navController: NavHostController) {
                 ) {
                     Icon(Icons.Default.CheckCircle, null)
                     Spacer(Modifier.width(8.dp))
-                    Text("Guardar Medición", fontSize = 18.sp)
+                    Text("Save Level", fontSize = 18.sp)
                 }
             }
         }
@@ -182,7 +182,7 @@ fun GlucosaView(navController: NavHostController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Rangos de Referencia",
+                    text = "Reference Ranges",
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp,
                     color = Color.Black,
@@ -197,7 +197,7 @@ fun GlucosaView(navController: NavHostController) {
                     .padding(horizontal = 16.dp, vertical = 12.dp)
 
                 Box(modifier = filaEstilo) {
-                    Text("↓  Baja: < 70 mg/dL", color = Color.Black)
+                    Text("↓  Low: < 70 mg/dL", color = Color.Black)
                 }
 
                 Box(modifier = filaEstilo) {
@@ -205,7 +205,7 @@ fun GlucosaView(navController: NavHostController) {
                 }
                 
                 Box(modifier = filaEstilo) {
-                    Text("↑  Alta: > 180 mg/dL", color = Color.Black)
+                    Text("↑  High: > 180 mg/dL", color = Color.Black)
                 }
             }
         }

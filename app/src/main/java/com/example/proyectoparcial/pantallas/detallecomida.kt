@@ -34,34 +34,33 @@ data class DetalleComida(
 
 fun obtenerDetalle(nombre: String): DetalleComida {
     return when (nombre) {
-        "Ensalada"    -> DetalleComida("Mezcla de vegetales frescos, baja en calorías y rica en vitaminas esenciales.", "25", "1.5g", "4g", "0.3g", "2g")
-        "Frutas"      -> DetalleComida("Fuente natural de azúcares, vitaminas y antioxidantes que protegen el organismo.", "60", "0.8g", "15g", "0.2g", "2.5g")
-        "Verduras"    -> DetalleComida("Alto contenido en vitaminas, minerales y fibra dietética para una digestión saludable.", "35", "2g", "7g", "0.3g", "3g")
-        "Pollo"       -> DetalleComida("Proteína magra de alta calidad, bajo en grasa saturada e ideal para el músculo.", "165", "31g", "0g", "3.6g", "0g")
-        "Pescado"     -> DetalleComida("Rico en omega-3 y proteínas de alto valor biológico que benefician el corazón.", "120", "22g", "0g", "3g", "0g")
-        "Agua"        -> DetalleComida("Esencial para la hidratación y el correcto funcionamiento de todos los órganos.", "0", "0g", "0g", "0g", "0g")
-        "Avena"       -> DetalleComida("Cereal integral con alto contenido de fibra que brinda energía sostenida al cuerpo.", "389", "17g", "66g", "7g", "10g")
-        "Huevo"       -> DetalleComida("Fuente completa de proteínas con todos los aminoácidos esenciales que necesitas.", "143", "13g", "1g", "10g", "0g")
-        "Pizza"       -> DetalleComida("Alta en sodio y grasas saturadas, se recomienda consumirla de forma ocasional.", "266", "11g", "33g", "10g", "2g")
-        "Pasta"       -> DetalleComida("Buena fuente de carbohidratos, se recomienda preferir la versión integral.", "220", "8g", "43g", "1.3g", "2.5g")
-        "Pan"         -> DetalleComida("Carbohidrato simple de fácil digestión, mejor consumirlo en versión integral.", "265", "9g", "49g", "3.2g", "2.7g")
-        "Arroz"       -> DetalleComida("Fuente de energía rápida; elige la versión integral para mayor valor nutricional.", "130", "2.7g", "28g", "0.3g", "0.4g")
-        "Queso"       -> DetalleComida("Rico en calcio y proteínas, pero con alto contenido de grasas saturadas.", "402", "25g", "1.3g", "33g", "0g")
-        "Jugo"        -> DetalleComida("Aporta vitaminas pero es alto en azúcar y carece de la fibra de la fruta entera.", "90", "0.7g", "22g", "0.2g", "0.5g")
-        "Refresco"    -> DetalleComida("Sin valor nutricional real, muy alto en azúcar y aditivos artificiales dañinos.", "140", "0g", "39g", "0g", "0g")
-        "Frituras"    -> DetalleComida("Alta densidad calórica con grasas trans y sodio en exceso, evita su consumo.", "547", "6g", "57g", "35g", "4g")
-        "Dulces"      -> DetalleComida("Calorías vacías sin ningún nutriente esencial que elevan el azúcar en sangre.", "390", "0g", "98g", "0g", "0g")
-        "Hamburguesa" -> DetalleComida("Alta en grasas saturadas, sodio y calorías; su consumo frecuente es perjudicial.", "295", "17g", "24g", "14g", "1g")
-        "Alcohol"     -> DetalleComida("Sin valor nutricional, daña el hígado y el sistema nervioso central con el tiempo.", "231", "0g", "3.5g", "0g", "0g")
-        "Azúcar"      -> DetalleComida("Calorías completamente vacías que aumentan el riesgo de desarrollar diabetes.", "387", "0g", "100g", "0g", "0g")
-        else          -> DetalleComida("Alimento registrado en el sistema. Consulta a tu nutricionista para más detalles.", "—", "—", "—", "—", "—")
+        "Salad"    -> DetalleComida("Fresh mix of vegetables, low in calories and rich in essential vitamins.", "25", "1.5g", "4g", "0.3g", "2g")
+        "Fruits"      -> DetalleComida("Natural source of sugar, vitamins, and antioxidants that protect your body.", "60", "0.8g", "15g", "0.2g", "2.5g")
+        "Vegetables"    -> DetalleComida("High in vitamins, minerals, and dietary fiber for healthy digestion.", "35", "2g", "7g", "0.3g", "3g")
+        "Chicken"       -> DetalleComida("High-quality lean protein, low in saturated fat and ideal for muscles.", "165", "31g", "0g", "3.6g", "0g")
+        "Fish"     -> DetalleComida("Rich in omega-3 and high biological value proteins that benefit the heart.", "120", "22g", "0g", "3g", "0g")
+        "Water"        -> DetalleComida("Essential for hydration and the correct functioning of all organs.", "0", "0g", "0g", "0g", "0g")
+        "Oatmeal"       -> DetalleComida("Whole grain with high fiber content that provides sustained energy.", "389", "17g", "66g", "7g", "10g")
+        "Egg"       -> DetalleComida("Complete source of protein with all the essential amino acids you need.", "143", "13g", "1g", "10g", "0g")
+        "Pizza"       -> DetalleComida("High in sodium and saturated fats; occasional consumption is recommended.", "266", "11g", "33g", "10g", "2g")
+        "Pasta"       -> DetalleComida("Good source of carbohydrates; whole-grain versions are preferred.", "220", "8g", "43g", "1.3g", "2.5g")
+        "Bread"         -> DetalleComida("Simple carbohydrate for easy digestion; whole-wheat is better.", "265", "9g", "49g", "3.2g", "2.7g")
+        "Rice"       -> DetalleComida("Quick energy source; choose the whole-grain version for more nutrition.", "130", "2.7g", "28g", "0.3g", "0.4g")
+        "Cheese"       -> DetalleComida("Rich in calcium and protein, but high in saturated fats.", "402", "25g", "1.3g", "33g", "0g")
+        "Juice"        -> DetalleComida("Provides vitamins but is high in sugar and lacks whole fruit fiber.", "90", "0.7g", "22g", "0.2g", "0.5g")
+        "Soda"    -> DetalleComida("No real nutritional value, very high in sugar and harmful additives.", "140", "0g", "39g", "0g", "0g")
+        "Chips"    -> DetalleComida("High calorie density with trans fats and excess sodium; avoid it.", "547", "6g", "57g", "35g", "4g")
+        "Sweets"      -> DetalleComida("Empty calories with no essential nutrients that spike blood sugar.", "390", "0g", "98g", "0g", "0g")
+        "Burger" -> DetalleComida("High in saturated fats, sodium, and calories; frequent use is harmful.", "295", "17g", "24g", "14g", "1g")
+        "Sugar"      -> DetalleComida("Empty calories that increase the risk of developing diabetes.", "387", "0g", "100g", "0g", "0g")
+        else          -> DetalleComida("Food registered in the system. Consult your nutritionist for more details.", "—", "—", "—", "—", "—")
     }
 }
 
 @Composable
 @Preview(showBackground = true)
 fun DetalleComidaView(
-    comida: ComidaItem = ComidaItem("Ensalada", "🥗")
+    comida: ComidaItem = ComidaItem("Salad", "🥗")
 ) {
     var cantidad by remember { mutableStateOf("") }
     val detalle = obtenerDetalle(comida.nombre)
@@ -149,14 +148,14 @@ fun DetalleComidaView(
                             )
                             Spacer(modifier = Modifier.width(8.dp))
                             Text(
-                                text = "Datos Nutricionales",
+                                text = "Nutrition Facts",
                                 fontSize = 18.sp,
                                 fontWeight = FontWeight.Bold,
                                 color = AzulBarra
                             )
                         }
                         Text(
-                            text = "Por cada 100g de alimento",
+                            text = "Per 100g of food",
                             fontSize = 12.sp,
                             color = Color.Gray,
                             modifier = Modifier.padding(start = 30.dp)
@@ -170,23 +169,23 @@ fun DetalleComidaView(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
-                            TarjetaNutriente("Calorías", detalle.calorias + " kcal", Modifier.weight(1f))
-                            TarjetaNutriente("Proteínas", detalle.proteinas, Modifier.weight(1f))
+                            TarjetaNutriente("Calories", detalle.calorias + " kcal", Modifier.weight(1f))
+                            TarjetaNutriente("Proteins", detalle.proteinas, Modifier.weight(1f))
                         }
                         Spacer(modifier = Modifier.height(8.dp))
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
-                            TarjetaNutriente("Carbohidratos", detalle.carbohidratos, Modifier.weight(1f))
-                            TarjetaNutriente("Grasas", detalle.grasas, Modifier.weight(1f))
+                            TarjetaNutriente("Carbs", detalle.carbohidratos, Modifier.weight(1f))
+                            TarjetaNutriente("Good Energy", detalle.grasas, Modifier.weight(1f))
                         }
                         Spacer(modifier = Modifier.height(8.dp))
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
-                            TarjetaNutriente("Fibra", detalle.fibra, Modifier.weight(1f))
+                            TarjetaNutriente("Fiber", detalle.fibra, Modifier.weight(1f))
                             Spacer(modifier = Modifier.weight(1f))
                         }
                     }
@@ -206,13 +205,13 @@ fun DetalleComidaView(
                             .padding(20.dp)
                     ) {
                         Text(
-                            text = "¿Cuánto vas a consumir?",
+                            text = "How much will you eat?",
                             fontSize = 18.sp,
                             fontWeight = FontWeight.Bold,
                             color = AzulBarra
                         )
                         Text(
-                            text = "Ingresa la porción en gramos",
+                            text = "Enter the portion in grams",
                             fontSize = 13.sp,
                             color = Color.Gray
                         )
@@ -224,8 +223,8 @@ fun DetalleComidaView(
                                     cantidad = texto
                                 }
                             },
-                            label = { Text("Cantidad") },
-                            placeholder = { Text("ej. 150") },
+                            label = { Text("Amount") },
+                            placeholder = { Text("e.g. 150") },
                             trailingIcon = { Text("g", fontWeight = FontWeight.Bold, color = Color.Gray) },
                             modifier = Modifier.fillMaxWidth(),
                             shape = RoundedCornerShape(12.dp)
@@ -241,7 +240,7 @@ fun DetalleComidaView(
                         ) {
                             Icon(Icons.Default.Add, contentDescription = null)
                             Spacer(modifier = Modifier.width(8.dp))
-                            Text("Agregar al Registro", fontSize = 18.sp)
+                            Text("Add to Log", fontSize = 18.sp)
                         }
                     }
                 }

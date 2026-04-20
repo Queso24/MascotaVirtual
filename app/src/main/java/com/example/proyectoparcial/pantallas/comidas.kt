@@ -7,10 +7,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.RemoveCircle
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,6 +24,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.proyectoparcial.R
 
 val FondoArena = Color(0xFFE8C87C)
@@ -34,35 +36,34 @@ val RojoSeccion = Color(0xFFF44336)
 data class ComidaItem(val nombre: String, val emoji: String)
 
 @Composable
-@Preview(showBackground = true)
-fun RegistroComidasView() {
+//@Preview(showBackground = true)
+fun RegistroComidasView(navController: NavHostController) {
     val saludables = listOf(
-        ComidaItem("Ensalada", "🥗"),
-        ComidaItem("Frutas", "🍎"),
-        ComidaItem("Verduras", "🥦"),
-        ComidaItem("Pollo", "🍗"),
-        ComidaItem("Pescado", "🐟"),
-        ComidaItem("Agua", "💧"),
-        ComidaItem("Avena", "🌾"),
-        ComidaItem("Huevo", "🥚")
+        ComidaItem("Salad", "🥗"),
+        ComidaItem("Fruits", "🍎"),
+        ComidaItem("Veggies", "🥦"),
+        ComidaItem("Chicken", "🍗"),
+        ComidaItem("Fish", "🐟"),
+        ComidaItem("Water", "💧"),
+        ComidaItem("Oatmeal", "🌾"),
+        ComidaItem("Egg", "🥚")
     )
 
     val moderacion = listOf(
         ComidaItem("Pizza", "🍕"),
         ComidaItem("Pasta", "🍝"),
-        ComidaItem("Pan", "🍞"),
-        ComidaItem("Arroz", "🍚"),
-        ComidaItem("Queso", "🧀"),
-        ComidaItem("Jugo", "🧃")
+        ComidaItem("Bread", "🍞"),
+        ComidaItem("Rice", "🍚"),
+        ComidaItem("Cheese", "🧀"),
+        ComidaItem("Juice", "🧃")
     )
 
     val evitar = listOf(
-        ComidaItem("Refresco", "🥤"),
-        ComidaItem("Frituras", "🍟"),
-        ComidaItem("Dulces", "🍬"),
-        ComidaItem("Hamburguesa", "🍔"),
-        ComidaItem("Alcohol", "🍺"),
-        ComidaItem("Azúcar", "🍭")
+        ComidaItem("Soda", "🥤"),
+        ComidaItem("Chips", "🍟"),
+        ComidaItem("Sweets", "🍬"),
+        ComidaItem("Burger", "🍔"),
+        ComidaItem("Sugar", "🍭")
     )
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -73,14 +74,18 @@ fun RegistroComidasView() {
                 .padding(horizontal = 8.dp, vertical = 14.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                imageVector = Icons.Default.ArrowBack,
-                contentDescription = null,
-                tint = Color.White
-            )
+            IconButton(onClick = {
+                navController.popBackStack()
+            }) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                    contentDescription = "Back",
+                    tint = Color.White
+                )
+            }
             Spacer(modifier = Modifier.width(8.dp))
             Text(
-                text = "Registro de Comidas",
+                text = "What I Ate",
                 color = Color.White,
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
@@ -114,7 +119,7 @@ fun RegistroComidasView() {
                         )
                         Spacer(modifier = Modifier.height(12.dp))
                         Text(
-                            text = "Selecciona lo que comiste hoy",
+                            text = "What did you eat today?",
                             fontSize = 18.sp,
                             fontWeight = FontWeight.Bold
                         )
@@ -124,7 +129,7 @@ fun RegistroComidasView() {
 
             item {
                 SeccionComida(
-                    titulo = "Comidas Saludables",
+                    titulo = "Healthy Food",
                     icono = Icons.Default.CheckCircle,
                     colorSeccion = VerdeSeccion,
                     comidas = saludables
@@ -133,8 +138,8 @@ fun RegistroComidasView() {
 
             item {
                 SeccionComida(
-                    titulo = "Con Moderación",
-                    icono = Icons.Default.RemoveCircle,
+                    titulo = "Moderate",
+                    icono = Icons.Default.AddCircle,
                     colorSeccion = AmbarSeccion,
                     comidas = moderacion
                 )
@@ -142,8 +147,8 @@ fun RegistroComidasView() {
 
             item {
                 SeccionComida(
-                    titulo = "Evitar",
-                    icono = Icons.Default.Cancel,
+                    titulo = "Avoid",
+                    icono = Icons.Default.Close,
                     colorSeccion = RojoSeccion,
                     comidas = evitar
                 )

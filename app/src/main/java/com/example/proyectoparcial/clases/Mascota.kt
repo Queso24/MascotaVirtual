@@ -6,5 +6,5 @@ data class Mascota(
     val salud: Int = 100,
     val energia: Int = 100,
     val nutricion: Int = 100,
-    val tipoMascota: String = "Dinosaurio"
+    val tipoMascota: String = "Dinosaur"
 )
