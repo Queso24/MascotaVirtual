@@ -52,16 +52,14 @@ fun MenuInicialView(navController: NavHostController) {
             SmallInfoCard(Icons.Default.Info, "110 mg/dL", Color(0xFF5C6BC0),onClick = { })
         }
 
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
         // --- MASCOTA ---
         Image(
-            painter = painterResource(id = R.drawable.dinosaurio),
+            painter = painterResource(id = R.drawable.tamagochi),
             contentDescription = "Pet",
-            modifier = Modifier.size(180.dp)
+            modifier = Modifier.size(280.dp)
         )
-
-        Spacer(modifier = Modifier.height(24.dp))
 
         // --- BURBUJA DE ESTADO ---
         Card(
