@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.proyectoparcial.clases.RegistroGlucosa
 import com.example.proyectoparcial.pantallas.GlucosaView
 import com.example.proyectoparcial.pantallas.MenuInicialView
+import com.example.proyectoparcial.pantallas.PantallaPersonalizar
 import com.example.proyectoparcial.pantallas.RegistroComidasView
 import com.example.proyectoparcial.pantallas.RegistroEstadisticasView
 
@@ -16,6 +17,8 @@ sealed class Rutas(val ruta: String) { //La usamos para tener una jerarquía de 
     object RegistroGlucosa : Rutas("registro_glucosa")
     object RegistroComidas : Rutas("registro_comidas")
     object RegistroEstadisticas : Rutas("registro_estadisticas")
+
+    object RegistroPersonalizacion : Rutas("registro_personalizacion")
 
 }
 
@@ -48,5 +51,9 @@ fun navegacion() {
             RegistroEstadisticasView(navController = navController)
         }
 
+        // Pantalla 5: Registro de personalización
+        composable(route = Rutas.RegistroPersonalizacion.ruta) {
+            PantallaPersonalizar(navController = navController)
+        }
     }
 }

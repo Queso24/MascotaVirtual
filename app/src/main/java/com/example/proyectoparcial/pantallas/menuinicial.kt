@@ -88,7 +88,7 @@ fun MenuInicialView(navController: NavHostController) {
             }
             Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                 StandardActionCard("Statistics", "Your numbers", Color.Transparent, Icons.Default.Info, onClick = { navController.navigate(Rutas.RegistroEstadisticas.ruta)}, Modifier.weight(1f), brush = GradientPink)
-                StandardActionCard("My Pet", "Customize it", CardGreen, Icons.Default.Info, onClick = { navController.navigate(Rutas.RegistroGlucosa.ruta)}, Modifier.weight(1f))
+                StandardActionCard("My Pet", "Customize it", CardGreen, Icons.Default.Info, onClick = { navController.navigate(Rutas.RegistroPersonalizacion.ruta)}, Modifier.weight(1f))
             }
         }
     }

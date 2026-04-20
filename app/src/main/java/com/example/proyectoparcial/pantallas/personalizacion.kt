@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.*
@@ -20,10 +21,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 
-@Preview(showBackground = true)
 @Composable
-fun PantallaPersonalizar() {
+fun PantallaPersonalizar(navController: NavHostController) {
 
     var nombreTexto by remember { mutableStateOf("Nina") }
     var itemSeleccionado by remember { mutableStateOf(0) }
@@ -42,7 +43,15 @@ fun PantallaPersonalizar() {
             modifier = Modifier.fillMaxWidth().padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(Icons.Default.PlayArrow, contentDescription = null, tint = Color.White)
+            IconButton(onClick = {
+                navController.popBackStack()
+            }) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                    contentDescription = "Back",
+                    tint = Color.White
+                )
+            }
             Spacer(modifier = Modifier.width(16.dp))
             Text("Personalizar Mascota", color = Color.White, fontSize = 20.sp, fontWeight = FontWeight.Bold)
         }

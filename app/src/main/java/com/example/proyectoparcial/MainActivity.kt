@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ProyectoParcialTheme {
-                PantallaPersonalizar()
+                navegacion()
             }
         }
 
