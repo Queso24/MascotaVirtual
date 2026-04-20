@@ -12,8 +12,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -56,6 +60,15 @@ fun RegistroEstadisticasView(navController: NavHostController) {
                     Text("You're doing great!", fontWeight = FontWeight.Bold, fontSize = 18.sp)
                     Text("Your control is excellent 💪", fontSize = 14.sp)
                 }
+                IconButton(onClick = {
+                    navController.popBackStack()
+                }) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = "Back",
+                        tint = Color.White
+                    )
+                }
             }
         }
 
@@ -76,7 +89,9 @@ fun RegistroEstadisticasView(navController: NavHostController) {
                             .height(150.dp),
                         horizontalArrangement = Arrangement.SpaceEvenly,
                         verticalAlignment = Alignment.Bottom
-                    ) {
+                    )
+
+                    {
                         data.forEach { (valor, fecha) ->
                             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                                 Text(valor.toString(), fontSize = 10.sp)
