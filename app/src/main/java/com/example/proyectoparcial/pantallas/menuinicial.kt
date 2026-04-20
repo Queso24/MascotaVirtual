@@ -1,10 +1,16 @@
 package com.example.proyectoparcial.pantallas
 
+<<<<<<< HEAD
 import android.R.attr.onClick
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+=======
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+>>>>>>> 9210a042785979958deb2fa12494a0fa6dff05ad
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -22,9 +28,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+<<<<<<< HEAD
 import androidx.navigation.NavHostController
 import com.example.proyectoparcial.R
 import com.example.proyectoparcial.navegacion.Rutas
+=======
+import com.example.proyectoparcial.R
+>>>>>>> 9210a042785979958deb2fa12494a0fa6dff05ad
 
 // Colores del diseño
 val BackgroundLight = Color(0xFFE0F7F9)
@@ -34,8 +44,13 @@ val CardGreen = Color(0xFFA5D6A7)
 val GradientPink = Brush.linearGradient(listOf(Color(0xFFF48FB1), Color(0xFFFFCC80)))
 
 @Composable
+<<<<<<< HEAD
 //@Preview(showBackground = true)
 fun MenuInicialView(navController: NavHostController) {
+=======
+@Preview(showBackground = true)
+fun MenuInicialView() {
+>>>>>>> 9210a042785979958deb2fa12494a0fa6dff05ad
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -48,8 +63,13 @@ fun MenuInicialView(navController: NavHostController) {
             modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
+<<<<<<< HEAD
             SmallInfoCard(Icons.Default.Favorite, "85%", Color(0xFF5C6BC0),onClick = { })
             SmallInfoCard(Icons.Default.Info, "110 mg/dL", Color(0xFF5C6BC0),onClick = { })
+=======
+            SmallInfoCard(Icons.Default.Favorite, "85%", Color(0xFF5C6BC0))
+            SmallInfoCard(Icons.Default.Info, "110 mg/dL", Color(0xFF5C6BC0))
+>>>>>>> 9210a042785979958deb2fa12494a0fa6dff05ad
         }
 
         Spacer(modifier = Modifier.height(40.dp))
@@ -83,12 +103,21 @@ fun MenuInicialView(navController: NavHostController) {
         // --- GRID DE ACCIONES ---
         Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
             Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+<<<<<<< HEAD
                 StandardActionCard("Medir Glucosa", "Registra tu nivel", CardBlue, Icons.Default.Info, onClick = { navController.navigate(Rutas.RegistroGlucosa.ruta)}, Modifier.weight(1f))
                 StandardActionCard("Comidas", "¿Qué comiste?", CardYellow, Icons.Default.Info, onClick = { navController.navigate(Rutas.RegistroGlucosa.ruta)}, Modifier.weight(1f))
             }
             Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                 StandardActionCard("Estadísticas", "Tus números", Color.Transparent, Icons.Default.Info, onClick = { navController.navigate(Rutas.RegistroGlucosa.ruta)}, Modifier.weight(1f), brush = GradientPink)
                 StandardActionCard("Mi Mascota", "Personalízala", CardGreen, Icons.Default.Info, onClick = { navController.navigate(Rutas.RegistroGlucosa.ruta)}, Modifier.weight(1f))
+=======
+                StandardActionCard("Medir Glucosa", "Registra tu nivel", CardBlue, Icons.Default.Info, Modifier.weight(1f))
+                StandardActionCard("Comidas", "¿Qué comiste?", CardYellow, Icons.Default.Info, Modifier.weight(1f))
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                StandardActionCard("Estadísticas", "Tus números", Color.Transparent, Icons.Default.Info, Modifier.weight(1f), brush = GradientPink)
+                StandardActionCard("Mi Mascota", "Personalízala", CardGreen, Icons.Default.Info, Modifier.weight(1f))
+>>>>>>> 9210a042785979958deb2fa12494a0fa6dff05ad
             }
         }
     }
@@ -96,9 +125,15 @@ fun MenuInicialView(navController: NavHostController) {
 
 // Carta pequeña del encabezado
 @Composable
+<<<<<<< HEAD
 fun SmallInfoCard(icon: ImageVector, value: String, color: Color,onClick: () -> Unit) {
     Card(
         modifier = Modifier.size(width = 110.dp, height = 75.dp).clickable { onClick() },
+=======
+fun SmallInfoCard(icon: ImageVector, value: String, color: Color) {
+    Card(
+        modifier = Modifier.size(width = 110.dp, height = 75.dp),
+>>>>>>> 9210a042785979958deb2fa12494a0fa6dff05ad
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(4.dp)
@@ -121,12 +156,19 @@ fun StandardActionCard(
     subtitle: String,
     bgColor: Color,
     icon: ImageVector,
+<<<<<<< HEAD
     onClick: () -> Unit,
+=======
+>>>>>>> 9210a042785979958deb2fa12494a0fa6dff05ad
     modifier: Modifier = Modifier,
     brush: Brush? = null
 ) {
     Card(
+<<<<<<< HEAD
         modifier = modifier.height(150.dp).clickable { onClick() },
+=======
+        modifier = modifier.height(150.dp),
+>>>>>>> 9210a042785979958deb2fa12494a0fa6dff05ad
         shape = RoundedCornerShape(24.dp),
         elevation = CardDefaults.cardElevation(4.dp)
     ) {
